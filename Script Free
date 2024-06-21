@@ -1,0 +1,151 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))()
+local Player = game.Players.LocalPlayer
+  local Window = OrionLib:MakeWindow({
+		Name = "Blox Fruit",
+		HidePremium = false,
+		SaveConfig = true,
+		ConfigFolder = "OrionTest",
+        IntroText = "Blox Fruit"       
+})
+
+local Tab = Window:MakeTab({
+    Name = "Script",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "Script sem key"
+})
+
+Tab:AddButton({
+	Name = "Tsuo Hud",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Tsuo7/TsuoHub/main/Tsuoscripts"))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Annie Hud",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Anniecuti/Free-Scr/main/Annie-Hub.lua"))()
+  	end    
+})
+
+Tab:AddButton({
+    Name = "Sunny Hud",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/hihiae/Sunny/main/SunnyMain"))()
+    end    
+})
+
+Tab:AddButton({
+	Name = "Dominic Hud",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Domadicoof/Domadicoof/main/Domadichub/NottoGay/Start.ranscript"))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Night Hud",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/NinjaHub/main/LoaderBloxFruit.lua"))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Smile Hud",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/hajibeza/Module/main/Mobile_Script.lua'))()
+  	end    
+})
+
+local Section = Tab:AddSection({
+	Name = "Script Key"
+})
+
+Tab:AddButton({
+	Name = "Yago Hud",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/pokelok/yagoX/main/main"))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "MTried Hud V2",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Minhtriettt/Free-Script/main/Main-V2.lua"))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Vani Hud",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/VaniaPerets/FolderGui-FolderHub/main/loader.lua", true))()
+  	end    
+})
+
+local Tab2 = Window:MakeTab({
+    Name = "configurações",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local Section = Tab2:AddSection({
+	Name = "Configurações:"
+})
+
+function setSpeed(speed)
+    local player = game.Players.LocalPlayer
+    player.Character.Humanoid.WalkSpeed = speed
+end
+
+function setGravity(gravity)
+    game.Workspace.Gravity = gravity
+end
+
+function setJumpPower(jumpPower)
+    local player = game.Players.LocalPlayer
+    player.Character.Humanoid.JumpPower = jumpPower
+end
+
+Tab2:AddSlider({
+    Name = "Velocidade",
+    Min = 0,
+    Max = 200,
+    Default = 5,
+    Color = Color3.fromRGB(255,255,255),
+    Increment = 1,
+    ValueName = "altera velocidade",
+    Callback = function(Value)
+        setSpeed(Value)
+    end    
+})
+
+Tab2:AddSlider({
+    Name = "Pulo",
+    Min = 0,
+    Max = 200,
+    Default = 5,
+    Color = Color3.fromRGB(255,255,255),
+    Increment = 1,
+    ValueName = "altera pulo",
+    Callback = function(Value)
+        setJumpPower(Value)
+    end    
+})
+
+Tab2:AddSlider({
+    Name = "Gravidade",
+    Min = 0,
+    Max = 200,
+    Default = 5,
+    Color = Color3.fromRGB(255,255,255),
+    Increment = 1,
+    ValueName = "altera gravidade",
+    Callback = function(Value)
+        setGravity(Value)
+    end    
+})
+
+OrionLib:Init()
